@@ -23,8 +23,8 @@ module ZweitagBootstrapRails
 
         # You can define the class to use on all forms. Default is simple_form.
         config.form_class = nil
-      end
-    end if defined?(SimpleForm)
+      end if defined?(SimpleForm)
+    end 
 
   end
 end
