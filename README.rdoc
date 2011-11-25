@@ -9,7 +9,7 @@ Uses bootstrap-sass[https://github.com/thomas-mcdonald/bootstrap-sass] and adds 
 
 == Import of bootstrap-sass
   
-  See bootstrap-sass[https://github.com/thomas-mcdonald/bootstrap-sass] for instructions how to add stylesheets and scripts via the asset pipeline
+See bootstrap-sass[https://github.com/thomas-mcdonald/bootstrap-sass] for instructions how to add stylesheets and scripts via the asset pipeline
   
 == Additional function
 
