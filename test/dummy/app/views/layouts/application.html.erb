@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+  <%= bootstrap_topbar do %>
+    <ul class="nav">
+      <li><%= link_to "Startseite", root_path %></li>
+    </ul>
+  <% end %>
+
+  <div class='container-fluid'>
+    <%= render "bootstrap/flash_messages" %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

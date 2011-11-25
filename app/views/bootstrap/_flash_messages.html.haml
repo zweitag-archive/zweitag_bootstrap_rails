@@ -1,0 +1,4 @@
+- flash.each do |type, message|
+  .alert-message.fade.in{ :class => bootstrap_flash_message_type(type), :data => { :alert => "alert" } }
+    = link_to "x", "#", :class => "close"
+    %p= message
