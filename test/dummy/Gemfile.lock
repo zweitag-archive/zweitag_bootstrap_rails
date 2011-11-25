@@ -1,0 +1,9 @@
+GEM
+  specs:
+    will_paginate (3.0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  will_paginate (~> 3.0)
