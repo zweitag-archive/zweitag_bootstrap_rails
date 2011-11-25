@@ -8,8 +8,8 @@ module BootstrapRenderer
       @tabs = []
     end
 
-    def default_options
-      { :class => :tabs }
+    def to_s
+      (titles + content).html_safe
     end
 
     def tab(title, opts={}, &block)
@@ -17,8 +17,10 @@ module BootstrapRenderer
       nil
     end
 
-    def to_s
-      (titles + content).html_safe
+    private
+
+    def default_options
+      { :class => :tabs }
     end
 
     def titles
