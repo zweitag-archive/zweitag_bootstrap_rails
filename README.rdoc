@@ -1,3 +1,28 @@
-= ZweitagBootstrapRails
+= Zweitag Bootstrap-Rails
+
+Uses bootstrap-sass[https://github.com/thomas-mcdonald/bootstrap-sass] and adds some function to be used in rails projects.
+
+== Installation
+
+  gem 'zweitag_bootstrap_rails', :git => 'git@github.com:zweitag/zweitag_bootstrap_rails.git', :branch='(...)'
+  bundle
+
+== Import of bootstrap-sass
+  
+  See bootstrap-sass[https://github.com/thomas-mcdonald/bootstrap-sass] for instructions how to add stylesheets and scripts via the asset pipeline
+  
+== Additional function
+
+Add some default styling:
+  @import "rails-bootstrap";
+
+Display all flash messages:
+  = render "bootstrap/flash_messages" 
+
+Add a bootstrap topbar:
+  = bootstrap_topbar do
+    # Your topbar content goes here
+  
+If you use simple_form or will_paginate, the generated markup by these gems will automatically be adjusted to bootstrap
 
 This project rocks and uses MIT-LICENSE.
