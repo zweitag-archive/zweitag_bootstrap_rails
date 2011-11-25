@@ -5,8 +5,12 @@ source "http://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
-# jquery-rails is used by the dummy application
+# Those are uses by the dummy app
 gem "jquery-rails"
+
+gem "will_paginate", "~> 3.0"
+gem "simple_form"
+
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or

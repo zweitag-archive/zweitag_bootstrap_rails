@@ -1,3 +1,4 @@
+require 'bootstrap-sass'
 module ZweitagBootstrapRails
   class Engine < Rails::Engine
 
@@ -23,8 +24,48 @@ module ZweitagBootstrapRails
 
         # You can define the class to use on all forms. Default is simple_form.
         config.form_class = nil
+        
       end if defined?(SimpleForm)
     end 
+
+
+    initializer "will_paginate_bootstrap" do
+      # https://gist.github.com/1214011
+      if defined?(WillPaginate)
+
+        module ::WillPaginate
+          module ActionView
+            def will_paginate(collection = nil, options = {})
+              options[:renderer] ||= BootstrapLinkRenderer
+              super.try :html_safe
+            end
+
+            class BootstrapLinkRenderer < LinkRenderer
+              protected
+
+              def html_container(html)
+                tag :div, tag(:ul, html), container_attributes
+              end
+
+              def page_number(page)
+                tag :li, link(page, page, :rel => rel_value(page)), :class => ('active' if page == current_page)
+              end
+
+              def previous_or_next_page(page, text, classname)
+                tag :li, link(text, page || '#'), :class => [classname[0..3], classname, ('disabled' unless page)].join(' ')
+              end
+
+              def gap
+                tag :li, link(super, '#'), :class => 'disabled'
+              end
+
+            end
+          end
+        end
+
+
+      end
+    end
 
   end
 end

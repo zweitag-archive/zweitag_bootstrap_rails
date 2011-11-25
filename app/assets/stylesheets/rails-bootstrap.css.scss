@@ -1,0 +1,12 @@
+body {
+  padding-top: 60px;
+}
+
+label {
+  margin-right: 20px;
+}
+
+input[type=submit] {
+  @extend .btn.primary;
+  @extend .btn;
+}
