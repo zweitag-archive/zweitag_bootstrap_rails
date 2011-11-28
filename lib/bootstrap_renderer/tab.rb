@@ -2,6 +2,8 @@ module BootstrapRenderer
   class Tab < Base
 
     def initialize(title, opts, view_context, &block)
+      raise ArgumentError.new("You must define a title") if title.blank?
+
       super(view_context)
       @options = opts
       @title = title
