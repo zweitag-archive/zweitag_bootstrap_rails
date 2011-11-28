@@ -17,14 +17,16 @@ module BootstrapRenderer
       nil
     end
 
+    alias_method :pill, :tab
+
     private
 
     def default_options
-      { :class => :tabs }
+      { :type => :tabs }
     end
 
     def titles
-      h.content_tag :ul, :class => @options[:class], :"data-tabs" => "tabs" do
+      h.content_tag :ul, :class => @options[:type], :"data-tabs" => "tabs" do
         @tabs.map(&:title_html).join.html_safe
       end
     end
