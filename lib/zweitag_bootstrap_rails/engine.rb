@@ -3,30 +3,52 @@ require 'bootstrap_renderer'
 module ZweitagBootstrapRails
   class Engine < Rails::Engine
 
+    # https://github.com/plataformatec/simple_form/wiki/Twitter-Bootstrap-integration
     initializer "simple_form_bootstrap" do
-      SimpleForm.setup do |config|
-        # CSS class used on errors.
-        config.error_class = :"help-inline"
 
-        # CSS class to add for error notification helper.
-        config.error_notification_class = "alert-message error"
+      if defined?(SimpleForm)
 
-        # CSS class to add to all wrapper tags.
-        config.wrapper_class = :clearfix
+        module ::SimpleForm
+          module Components 
+            module ContainedInput 
+              def contained_input 
+                '<div class="input">' + input + (error.nil? ? '' : error) + '</div>'
+              end 
+            end 
+          end 
+          module Inputs 
+            class Base 
+              include SimpleForm::Components::ContainedInput
+            end 
+          end 
+        end
 
-        # CSS class to add to the wrapper if the field has errors.
-        config.wrapper_error_class = :error
+        SimpleForm.setup do |config|
+          config.components = [ :label, :contained_input ]
 
-        # You can wrap a collection of radio/check boxes in a pre-defined tag, defaulting to none.
-        config.collection_wrapper_tag = "ul class='inputs-list'"
+          # CSS class used on errors.
+          config.error_class = :"help-inline"
 
-        # You can wrap each item in a collection of radio/check boxes with a tag, defaulting to span.
-        config.item_wrapper_tag = "li"
+          # CSS class to add for error notification helper.
+          config.error_notification_class = "alert-message error"
 
-        # You can define the class to use on all forms. Default is simple_form.
-        config.form_class = nil
-        
-      end if defined?(SimpleForm)
+          # CSS class to add to all wrapper tags.
+          config.wrapper_class = :clearfix
+
+          # CSS class to add to the wrapper if the field has errors.
+          config.wrapper_error_class = :error
+
+          # You can wrap a collection of radio/check boxes in a pre-defined tag, defaulting to none.
+          config.collection_wrapper_tag = "ul class='inputs-list'"
+
+          # You can wrap each item in a collection of radio/check boxes with a tag, defaulting to span.
+          config.item_wrapper_tag = "li"
+
+          # You can define the class to use on all forms. Default is simple_form.
+          config.form_class = nil
+        end
+
+      end
     end 
 
 
