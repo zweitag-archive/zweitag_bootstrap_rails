@@ -18,9 +18,7 @@ module BootstrapHelper
   def bootstrap_topbar(&block)
     content_tag(:div, :class => 'topbar') do
       content_tag(:div, :class => 'topbar-inner') do
-        content_tag(:div, :class => 'container-fluid') do
-          yield
-        end
+        yield
       end
     end
   end

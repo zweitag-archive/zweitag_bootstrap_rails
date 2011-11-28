@@ -22,7 +22,8 @@ Display all flash messages:
 === Topbar
 Add a bootstrap topbar:
   = bootstrap_topbar do
-    # Your topbar content goes here
+    .container-fluid
+      # Your topbar content goes here
   
 === Tabs / Pills
 
