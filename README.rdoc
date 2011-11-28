@@ -59,6 +59,10 @@ Or the longer syntax (use a block parameter):
 
 You can omit the launch_button call if you just need the modal and launch it by yourself
 
-If you use simple_form or will_paginate, the generated markup by these gems will automatically be adjusted to bootstrap
+=== External Gems
+If you use
+* will_paginate
+* simple_form
+the generated markup by these gems will automatically be adjusted to bootstrap
 
 This project rocks and uses MIT-LICENSE.
