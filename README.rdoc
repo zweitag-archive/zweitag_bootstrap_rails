@@ -35,9 +35,9 @@ Add a bootstrap topbar:
       Und so weiter
     = t.tab "Another Title", :id => "blubb" do
       Noch einer
-    = t.tab "Noch einer ohne id" do
+    = t.tab "A tab without id" do
       jajaja
-    = t.tab "External", :url => "/bla"
+    = t.tab "External", :url => "http://www.example.com"
 
 === Modals
 
