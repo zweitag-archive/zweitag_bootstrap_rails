@@ -23,9 +23,11 @@ Add a bootstrap topbar:
   = bootstrap_topbar do
     # Your topbar content goes here
   
-A simpler method to use bootstrap tabs (currently only one tab section per page is supported
+Support for tabs / pills:
 
+  # bootstrap_pills works the same way
   = bootstrap_tabs do |t|
+    # ... or t.pill
     = t.tab "Title", :id => "bla", :active => true do
       Hallo Welt
       Und so weiter
