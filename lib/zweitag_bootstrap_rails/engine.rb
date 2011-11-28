@@ -1,5 +1,3 @@
-require 'bootstrap-sass'
-
 require 'bootstrap_renderer'
 
 module ZweitagBootstrapRails

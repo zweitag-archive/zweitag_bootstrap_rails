@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     zweitag_bootstrap_rails (0.0.1)
-      bootstrap-sass (= 1.4.0)
       rails (~> 3.1)
 
 GEM
@@ -113,8 +112,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (= 1.4.0)
   haml-rails
   jquery-rails
+  sass-rails
   simple_form
   sqlite3
   will_paginate (~> 3.0)
