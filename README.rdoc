@@ -16,14 +16,16 @@ See bootstrap-sass[https://github.com/thomas-mcdonald/bootstrap-sass] for instru
 Add some default styling:
   @import "rails-bootstrap";
 
+=== Flash messages
 Display all flash messages:
   = render "bootstrap/flash_messages" 
 
+=== Topbar
 Add a bootstrap topbar:
   = bootstrap_topbar do
     # Your topbar content goes here
   
-Support for tabs / pills:
+=== Tabs / Pills
 
   # bootstrap_pills works the same way
   = bootstrap_tabs do |t|
@@ -37,7 +39,7 @@ Support for tabs / pills:
       jajaja
     = t.tab "External", :url => "/bla"
 
-Support for modals:
+=== Modals
 
 Use the short form (do not use a block parameter) if you do not need a footer and are happy with the default configuration
 
