@@ -2,14 +2,6 @@ require 'test_helper'
 
 module BootstrapRenderer
 
-  class ::String
-
-    def squish_html
-      squish.gsub(/> </,'><')
-    end
-
-  end
-
   class ModalTest < ActionView::TestCase
 
     def setup
