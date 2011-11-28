@@ -7,4 +7,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-tabs
+//= require bootstrap-modal
 //= require_tree .

@@ -1,0 +1,13 @@
+= bootstrap_modal do |m|
+  = m.header "Header of Long Syntax"
+  = m.body do
+    This syntax allows you to use more options.
+    %p And a footer.
+  = m.footer do
+    This is the footer
+  = m.launch_button "Launch Modal", :class => "btn primary"
+
+
+= bootstrap_modal :id => "short_syntax", :header => "Short Header", :launch_button => "Open" do
+  This is 
+  %p an example for the short syntax.

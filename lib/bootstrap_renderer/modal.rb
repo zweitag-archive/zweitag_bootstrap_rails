@@ -1,41 +1,6 @@
-module BootstrapHelper
+module BootstrapRenderer
 
-  def bootstrap_flash_message_type(type)
-    case type
-    when :alert
-      "warning"
-    when :error
-      "error"
-    when :notice
-      "info"
-    when :success
-      "success"
-    else
-      type.to_s
-    end
-  end
-  
-  def bootstrap_topbar(&block)
-    content_tag(:div, :class => 'topbar') do
-      content_tag(:div, :class => 'topbar-inner') do
-        content_tag(:div, :class => 'container-fluid') do
-          yield
-        end
-      end
-    end
-  end
-
-  def bootstrap_modal(opts = {}, &block)
-    BootstrapRenderer::Modal.new(opts, self).tap do |renderer| 
-      if block.arity == 0
-        renderer.body { block.call }
-      else
-        yield renderer
-      end
-    end
-  end
-
-  class BootstrapRenderer::Modal < BootstrapRenderer::Base
+  class BootstrapRenderer::Modal < Base
 
     def initialize(opts = {}, view_context, &block)
       super(view_context)
@@ -118,5 +83,4 @@ module BootstrapHelper
     end
 
   end
-
 end
