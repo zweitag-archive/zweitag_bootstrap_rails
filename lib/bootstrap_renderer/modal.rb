@@ -48,17 +48,21 @@ module BootstrapRenderer
     end
 
     def header_html
-      h.content_tag :div, :class => "modal-header" do
-        [
-        h.link_to("&times;".html_safe, "#", :class => "close"),
-        h.content_tag(:h3, @header_caption)
-        ].join.html_safe
+      if @header_caption
+        h.content_tag :div, :class => "modal-header" do
+          [
+            h.link_to("&times;".html_safe, "#", :class => "close"),
+            h.content_tag(:h3, @header_caption)
+          ].join.html_safe
+        end
       end
     end
 
     def body_html
-      h.content_tag :div, :class => "modal-body" do
-        @body_block.call
+      if @body_block
+        h.content_tag :div, :class => "modal-body" do
+          @body_block.call
+        end
       end
     end
 
