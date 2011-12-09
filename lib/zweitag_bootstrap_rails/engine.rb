@@ -8,23 +8,7 @@ module ZweitagBootstrapRails
 
       if defined?(SimpleForm)
 
-        module ::SimpleForm
-          module Components 
-            module ContainedInput 
-              def contained_input 
-                '<div class="input">' + input + (error.nil? ? '' : error) + '</div>'
-              end 
-            end 
-          end 
-          module Inputs 
-            class Base 
-              include SimpleForm::Components::ContainedInput
-            end 
-          end 
-        end
-
         SimpleForm.setup do |config|
-          config.components = [ :label, :contained_input ]
 
           # CSS class used on errors.
           config.error_class = :"help-inline"
@@ -46,6 +30,11 @@ module ZweitagBootstrapRails
 
           # You can define the class to use on all forms. Default is simple_form.
           config.form_class = nil
+
+          # Tell browsers whether to use default HTML5 validations (novalidate option).
+          # Default is enabled.
+          config.browser_validations = false
+
         end
 
       end
