@@ -13,7 +13,7 @@ module BootstrapRenderer
       end
 
       expected_result = <<-EOF
-        <ul class="tabs" data-tabs="tabs">
+        <ul class="nav nav-tabs" data-tabs="tabs">
           <li><a href="http://www.example.com">External</a></li>
           <li><a href="#internal">Internal</a></li>
         </ul>
@@ -34,7 +34,7 @@ module BootstrapRenderer
       end
 
       expected_result = <<-EOF
-        <ul class="pills" data-tabs="tabs">
+        <ul class="nav nav-pills" data-tabs="tabs">
           <li><a href="http://www.example.com">External</a></li>
           <li><a href="#internal">Internal</a></li>
         </ul>
