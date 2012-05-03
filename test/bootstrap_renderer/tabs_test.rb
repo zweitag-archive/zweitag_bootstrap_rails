@@ -13,9 +13,9 @@ module BootstrapRenderer
       end
 
       expected_result = <<-EOF
-        <ul class="nav nav-tabs" data-tabs="tabs">
-          <li><a href="http://www.example.com">External</a></li>
-          <li><a href="#internal">Internal</a></li>
+        <ul class="nav nav-tabs">
+          <li><a href="http://www.example.com" data-toggle="tab">External</a></li>
+          <li><a href="#internal" data-toggle="tab">Internal</a></li>
         </ul>
         <div class="tab-content" id="my-tab-content">
           <div class="tab-pane" id="internal">Internal content</div>
@@ -34,9 +34,9 @@ module BootstrapRenderer
       end
 
       expected_result = <<-EOF
-        <ul class="nav nav-pills" data-tabs="tabs">
-          <li><a href="http://www.example.com">External</a></li>
-          <li><a href="#internal">Internal</a></li>
+        <ul class="nav nav-pills">
+          <li><a href="http://www.example.com" data-toggle="tab">External</a></li>
+          <li><a href="#internal" data-toggle="tab">Internal</a></li>
         </ul>
         <div class="tab-content" id="my-tab-content">
           <div class="tab-pane" id="internal">Internal content</div>

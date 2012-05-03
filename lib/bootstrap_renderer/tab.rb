@@ -13,7 +13,7 @@ module BootstrapRenderer
 
     def title_html
       h.content_tag :li, :class => active_class do
-        h.link_to @title, target
+        h.link_to @title, target, :data => { :toggle => 'tab' }
       end
     end
 

@@ -26,7 +26,7 @@ module BootstrapRenderer
     end
 
     def titles
-      h.content_tag :ul, :class => "nav nav-#{@options[:type]}", :"data-tabs" => "tabs" do
+      h.content_tag :ul, :class => "nav nav-#{@options[:type]}" do
         @tabs.map(&:title_html).join.html_safe
       end
     end

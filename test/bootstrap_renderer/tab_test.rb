@@ -12,7 +12,7 @@ module BootstrapRenderer
 
     test "title" do
       expected_result = <<-EOF
-      <li><a href="#title">Title</a></li>
+      <li><a href="#title" data-toggle="tab">Title</a></li>
       EOF
 
       assert_equal expected_result.squish_html, @default_tab.title_html.squish_html
