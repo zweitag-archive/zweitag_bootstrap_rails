@@ -13,7 +13,7 @@ module BootstrapRenderer
 
     def title_html
       h.content_tag :li, :class => active_class do
-        h.link_to @title, target, :data => { :toggle => 'tab' }
+        h.link_to @title, target, data_toggle
       end
     end
 
@@ -41,6 +41,10 @@ module BootstrapRenderer
 
     def html_id
       @options[:id] || @title.underscore.gsub(' ', '_')
+    end
+
+    def data_toggle
+      @options[:url] ? {} : { :data => { :toggle => 'tab' } }
     end
 
   end
