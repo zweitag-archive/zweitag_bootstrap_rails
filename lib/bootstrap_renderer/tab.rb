@@ -12,7 +12,7 @@ module BootstrapRenderer
     end
 
     def title_html
-      h.content_tag :li, :class => active_class do
+      h.content_tag :li, title_html_options do
         h.link_to @title, target, data_toggle
       end
     end
@@ -20,7 +20,7 @@ module BootstrapRenderer
     def content_html
       return unless @block
 
-      h.content_tag :div, :id => html_id, :class => ["tab-pane", active_class].compact do
+      h.content_tag :div, content_html_options do
         @block.call
       end
     end
@@ -31,8 +31,28 @@ module BootstrapRenderer
       @options[:active]
     end
 
-    def active_class
-      active? ? "active" : nil
+    def disabled?
+      @options[:disabled]
+    end
+
+    def title_html_options
+      (@options[:title_html_options] || {}).tap do |options|
+        classes = Array.wrap(options[:class]).compact
+        classes << :active if active?
+        classes << :disabled if disabled?
+        options[:class] = classes.join(" ") if classes.present?
+      end
+    end
+
+    def content_html_options
+      (@options[:content_html_options] || {}).tap do |options|
+        options[:id] = html_id
+
+        classes = Array.wrap(options[:class]).compact
+        classes << "tab-pane"
+        classes << :active if active?
+        options[:class] = classes.join(" ") if classes.present?
+      end
     end
 
     def target
